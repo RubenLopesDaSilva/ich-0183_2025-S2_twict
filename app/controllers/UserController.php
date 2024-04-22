@@ -6,7 +6,7 @@ namespace App\Controllers;
 
 use App\Models\User;
 
-class UserController extends \App\Controllers\AppController
+class UserController extends AppController
 {
     public function index(): void
     {

@@ -4,17 +4,21 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-abstract class AppController extends \Core\Controller
+use \App\Helpers\FlashNotificationHelper;
+use \Core\Controller;
+use \Core\View;
+
+abstract class AppController extends Controller
 {
-    protected \Core\View $view;
-    protected \App\Helpers\FlashNotificationHelper $flash;
+    protected View $view;
+    protected FlashNotificationHelper $flash;
 
     protected function before(): bool
     {
-        $this->view = new \Core\View(templatePath: dirname(__DIR__) . '/views/');
+        $this->view = new View(templatePath: dirname(__DIR__) . '/views/');
         $this->view->setFilename(strtolower($this->routeParams['controller']) . DIRECTORY_SEPARATOR . strtolower($this->routeParams['action']));
 
-        $this->flash = new \App\Helpers\FlashNotificationHelper();
+        $this->flash = new FlashNotificationHelper();
 
         return parent::before();
     }

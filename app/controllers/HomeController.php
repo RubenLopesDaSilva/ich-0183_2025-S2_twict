@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-class HomeController extends \App\Controllers\AppController
+class HomeController extends AppController
 {
     public function index(): void
     {

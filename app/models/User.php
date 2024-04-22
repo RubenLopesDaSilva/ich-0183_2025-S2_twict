@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-class User extends \Core\Model
+use \Core\Model;
+
+class User extends Model
 {
     public static function getAll(): array
     {
