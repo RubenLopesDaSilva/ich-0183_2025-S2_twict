@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
-				<h2>Liste des utilisateurs</h2>
+				<h2>{{ block title }}</h2>
 				<table class="table">
 					<thead>
 						<tr>
@@ -27,8 +27,7 @@
 							<td>{{ $user.mailAddress }}</td>
 							<td>
 								<a href="/user/edit?id={{ $user.id }}" class="btn btn-primary btn-lg active">Editer</a>
-								<a href="/user/remove?id={{ $user.id }}"
-									class="btn btn-primary btn-lg active">Supprimer</a>
+								<a href="/user/remove?id={{ $user.id }}" class="btn btn-primary btn-lg active">Supprimer</a>
 							</td>
 						</tr>
 						{% endforeach %}
