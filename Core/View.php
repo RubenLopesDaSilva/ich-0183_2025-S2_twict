@@ -115,6 +115,8 @@ class View implements \ArrayAccess
 			$code = str_replace($value[0], '', $code);
 		}
 
+		$count = 0;
+
 		do {
 			// Convert {{ block name }} to block name content.
 			foreach ($blocks as $name => $value) {
